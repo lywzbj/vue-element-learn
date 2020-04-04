@@ -60,14 +60,33 @@ export default {
         //登录方法
         login(){
             //调用表单校验回调函数
-            this.$refs.loginRef.validate((valid) =>{
+            this.$refs.loginRef.validate( async valid =>{
                 
                 if(!valid){
                     return;
                 }
             //表单的验证是根据之前添加的验证规则进行判断的,如果满足验证规则
             //valid为true  否则为false
+                // this.$axios({
+                //     headers:{
+                //         "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8"
+                //     },
+                //     method:"GET",
+                //     url:'http://localhost:9001/user/all',
 
+                // }).then(function(result){
+                //     console.log(result)
+                // }).catch(function(err){
+                //     console.log(err)
+                // })
+
+                if(true){
+                    this.$message.success('登录成功');
+                    //1、登录成功后，把token保存到客户端的sessionStorage中
+                    window.sessionStorage.setItem("token","tokenBody")
+                    //2、通过编程式导航跳转到后台主页
+                    this.$router.push('/home');
+                }
 
             })
               

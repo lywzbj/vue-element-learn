@@ -8,8 +8,8 @@ import './assets/css/global.css'
 //导入axios
 import axios from 'axios'
 //添加axios到Vue
-Vue.prototype.$http = axios
-
+Vue.prototype.$axios = axios
+axios.defaults.baseURL='/api'
 Vue.config.productionTip = false
 
 
